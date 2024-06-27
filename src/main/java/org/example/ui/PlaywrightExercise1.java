@@ -5,7 +5,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class PlaywrightExcercise1 {
+public class PlaywrightExercise1 {
 
     // Copy the main method from WebPageAutomationExample and add following operations
     // 1. add 3 more TODOs
