@@ -41,34 +41,32 @@ public class PlaywrightExercise1 {
             //Second task: log into console number of TODOs present on screen
             //get all elements with locator "list item"
             // Use a locator to find an element with a specific attribute
-            Locator locator = page.locator("//label[@for]");
-            locator.all().size();
-            //  List<ElementHandle> elements = locator.elementHandles();
-            //  elements.size();
+            Locator todoItemLocator = page.locator("//label[@for]");
 
             // Perform actions on each element
-//            for (Locator element : locator.all()) {
-//                String text = element.textContent();
+//            for (Locator todoItem : todoItemLocator.all()) {
+//                String text = todoItem.textContent();
 //            }
-            //locator.all().forEach(element -> System.out.println(element));
-            locator.all().forEach(System.out::println);
+            //todoItemLocator.all().forEach(todoItem -> System.out.println(todoItem));
+            //todoItemLocator.all().forEach(System.out::println);
 
-            System.out.println("Sum of elements on the list is " +locator.all().size());
+            System.out.println("Number of todos on the list is " + todoItemLocator.all().size());
 
             //Third task: mark all todos as done
             // Go to all TODOs
 
-//            for (Locator element: locator.all()) {
-//                element.click();
-//            }
-            //locator.all().forEach(element -> element.click());
-            locator.all().forEach(Locator::click);
+//          for (Locator todoItem : todoItemLocator.all()) {
+//              todoItem.click();
+//          }
+            //todoItemLocator.all().forEach(todoItem -> todoItem.click());
+            todoItemLocator.all().forEach(Locator::click);
+            page.waitForTimeout(5000);
 
 
             //Fourth task: clear all completed todos
             page.locator("//button[@data-testid=\"clear-all\"]").click();
             // check how many TODOs has left
-            System.out.println(locator.all().size());
+            System.out.println(todoItemLocator.all().size());
         }
 
     }
