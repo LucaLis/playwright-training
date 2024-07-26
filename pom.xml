@@ -47,7 +47,7 @@
                         </goals>
                         <configuration>
                             <includes>
-                                <include>**/tests/basic/*.java</include>
+                                <include>/examples/*.java</include>
                             </includes>
                             <argLine>-Xmx128m</argLine>
                         </configuration>

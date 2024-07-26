@@ -4,12 +4,12 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import org.junit.jupiter.api.Test;
 
-public class TestCase1Test {
+public class TestCase2Test {
 
-    public static final String TODO_TASK_TEXT = "TEST 1 - Learn how to automate tests";
+    public static final String TODO_TASK_TEXT = "TEST 2 - Learn how to automate tests";
 
     @Test
-    public void TC01_addSingleTODOItem(){
+    public void Test2_TC01_addSingleTODOItem(){
         try (Playwright playwright = Playwright.create()) {
             // start Chromium browser using Playwright - playwright.chromium().launch(...)
             //      turn off headless mode to make it visible - setHeadless(false)
