@@ -4,7 +4,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import org.junit.jupiter.api.Test;
 
-public class TestCase1Test {
+public class TestCase1Test extends BaseTest {
 
     public static final String TODO_TASK_TEXT = "TEST 1 - Learn how to automate tests";
 

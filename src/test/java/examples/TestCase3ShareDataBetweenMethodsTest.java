@@ -5,9 +5,7 @@ import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import org.junit.jupiter.api.*;
 import org.junit.platform.commons.util.StringUtils;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@TestMethodOrder(MethodOrderer.MethodName.class)
-public class TestCase3ShareDataBetweenMethodsTest {
+public class TestCase3ShareDataBetweenMethodsTest extends BaseTest {
 
     // execute methods in alphabetical order - sorter ?
     // share the data across the methods - lifecycle - class?
