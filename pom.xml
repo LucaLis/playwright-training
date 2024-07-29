@@ -53,6 +53,32 @@
                         </configuration>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>me.fabriciorby</groupId>
+                        <artifactId>maven-surefire-junit5-tree-reporter</artifactId>
+                        <version>1.3.0</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <reportFormat>plain</reportFormat>
+                    <!-- disable all output as it should not be required during normal run -->
+                    <consoleOutputReporter>
+                        <disable>true</disable>
+                    </consoleOutputReporter>
+                    <statelessTestsetInfoReporter
+                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoTreeReporter">
+                        <!-- configure output logs for debugging and investigation -->
+<!--                            <printStacktraceOnError>true</printStacktraceOnError>-->
+<!--                            <printStacktraceOnFailure>true</printStacktraceOnFailure>-->
+<!--                            <printStdoutOnError>true</printStdoutOnError>-->
+<!--                            <printStdoutOnFailure>true</printStdoutOnFailure>-->
+<!--                            <printStdoutOnSuccess>false</printStdoutOnSuccess>-->
+<!--                            <printStderrOnError>true</printStderrOnError>-->
+<!--                            <printStderrOnFailure>true</printStderrOnFailure>-->
+<!--                            <printStderrOnSuccess>false</printStderrOnSuccess>-->
+                    </statelessTestsetInfoReporter>
+                </configuration>
             </plugin>
         </plugins>
     </build>
