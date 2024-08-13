@@ -27,10 +27,7 @@ public class PlaywrightExercise2 {
             // navigate to our test page
             page.navigate("https://antondedyaev.github.io/todo_list/");
 
-            // click at the todo input
-            page.getByPlaceholder("What needs to be done?").click();
-
-            // 1. write a code that will add 100 todos with names: TODO#1 TODO#2... TODO#100
+           // 1. write a code that will add 100 todos with names: TODO#1 TODO#2... TODO#100
 
             for (int i = 1; i <= 100; i++) {
                 // click at the todo input
@@ -51,7 +48,7 @@ public class PlaywrightExercise2 {
             // keep browser open at the end of script for 5 seconds
             page.waitForTimeout(10000);
 
-
+            // Locate all TODOs items
             Locator locator = page.locator("//label[@for]");
             List<Locator> todos = locator.all();
             for (int i = 0; i < todos.size(); i++) {
@@ -59,6 +56,13 @@ public class PlaywrightExercise2 {
                     todos.get(i).click();
                 }
             }
+
+            // 13.08. Task 4 and task 5
+            // 4. switch the view on webpage from "All" to "Active" only (it should hide the done TODOs)
+            page.locator("//button[@data-testid=\"active-todos\"]").click();
+            // check how many TODOs has left
+            System.out.println(page.locator("//label[@for]").all().size());
+
 
             // keep browser open at the end of script for 5 seconds
             page.waitForTimeout(10000);
