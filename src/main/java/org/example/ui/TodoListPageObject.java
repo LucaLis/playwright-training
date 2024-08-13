@@ -1,9 +1,8 @@
 package org.example.ui;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
+
+import java.util.List;
 
 public class TodoListPageObject {
 
@@ -39,5 +38,21 @@ public class TodoListPageObject {
 
     public void closePage() {
         playwright.close();
+    }
+
+    // 13.08. hometask - Mark even TODOs as Done
+    public void markEvenTodosDone() {
+        Locator locator = page.locator("//label[@for]");
+        List<Locator> todos = locator.all();
+        for (int i = 0; i < todos.size(); i++) {
+            if ((i + 1) % 2 != 0) {
+                todos.get(i).click();
+            }
+        }
+    }
+
+    // 13.08. hometask - Remove all Completed todos
+    public void removeAllDoneTodos() {
+        page.locator("//button[@data-testid=\"clear-all\"]").click();
     }
 }
