@@ -7,7 +7,6 @@ import org.junit.platform.commons.util.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.time.LocalDateTime;
 
 public class PlaywrightViaBrowserstackManager {
 
@@ -23,13 +22,13 @@ public class PlaywrightViaBrowserstackManager {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("browser","chrome");
         jsonObject.addProperty("browser_version","latest");
-        jsonObject.addProperty("os","osx");
-        jsonObject.addProperty("os_version","catalina");
+        jsonObject.addProperty("os","windows");
+        jsonObject.addProperty("os_version","11");
         jsonObject.addProperty("browserstack.networkLogs", true);
-        jsonObject.addProperty("browserstack.local", true);
+        //jsonObject.addProperty("browserstack.local", true);
         jsonObject.addProperty("browserstack.console", "errors");
-        jsonObject.addProperty("browserstack.username", "ukaszlis_sqFPbW");
-        jsonObject.addProperty("browserstack.accessKey", "u87sXs8fxwUPArpPdJ58");
+        jsonObject.addProperty("browserstack.username", System.getenv("BS_USER"));
+        jsonObject.addProperty("browserstack.accessKey", System.getenv("BS_KEY"));
 
         // names of session and build etc
         jsonObject.addProperty("project", "playwright-training");
